@@ -1,0 +1,167 @@
+<html>
+ <!--meta信息  -->
+ <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- 适配移动端 -->
+  <title>Document</title><!-- 增加首页title -->
+  <!-- 链接css,自定义网页样式和布局 -->
+  <link rel="stylesheet" href="./style.css">
+  <meta name="description" content="this is a very simple and crude WebSite, but i am proud!">
+ </head>
+
+ <body>
+  <!-- 这里可以添加内容 -->
+  <div>
+  <h1 class="header">欢迎来到羊村顶流的博客</h1>
+  </div>
+  <hr>
+  <div class="image-container">
+    <div class="blur_load" style="background-image: url('./img_blur.jpg');">
+    <img src="./01.jpg" alt="img has lost", loading="lazy">
+    </div>
+    <div class="blur_load" style="background-image: url('./img_blur.jpg');">
+    <img src="./01.jpg" alt="img has lost", loading="lazy">
+    </div>
+    <div class="blur_load" style="background-image: url('./img_blur.jpg');">
+    <img src="./01.jpg" alt="img has lost", loading="lazy">
+    </div>
+  </div>
+  <hr>
+
+  <div class="card-container">    
+    <div class="card">
+        <div class="box">
+        <div class="img_box">
+            <img 
+            src="./千与千寻.gif"
+            alt="this is gif"
+            loading="lazy"
+            />
+            <!-- <img 
+            src="./千与千寻_白龙.gif" 
+            alt="this is gif" 
+            loading="lazy"> -->
+        </div>
+        </div>
+    
+        <div class="box">
+        <div class="content">
+            <h2>
+            Heiyun <!-- Heiyun 为标签内容 -->
+            <br>
+            <!-- <span> 是一个内联元素，通常用于包裹文本或其他元素，以便于应用样式或进行特定的操作。 -->
+            <span> 
+                Professional log<!-- Professional log为标签内容 -->
+            </span>
+            </h2>
+    
+            <ul>
+            <li>
+                Posts
+                <span>22</span>
+            </li>
+            <li>
+                Followers
+                <span>999+</span>
+            </li>
+            <li>
+                Following
+                <span>10</span>
+            </li>
+            </ul>
+    
+            <button>Follow</button>
+        </div>
+        </div>
+    
+        <div class="circle">
+        <div class="img_box">
+            <img src="./user_log.jpg" alt="">
+        </div>
+        </div>
+    </div>
+    
+    <!-- 第二个头像 -->
+    <div class="card_apx">
+        <div class="box">
+        <div class="img_box">
+            <!-- <img 
+            src="./千与千寻.gif"
+            alt="this is gif"
+            loading="lazy"
+            /> -->
+            <img 
+            src="./千与千寻_白龙.gif" 
+            alt="this is gif" 
+            loading="lazy">
+        </div>
+        </div>
+    
+        <div class="box">
+        <div class="content">
+            <h2>
+            Heiyun <!-- Heiyun 为标签内容 -->
+            <br>
+            <!-- <span> 是一个内联元素，通常用于包裹文本或其他元素，以便于应用样式或进行特定的操作。 -->
+            <span> 
+                Professional log<!-- Professional log为标签内容 -->
+            </span>
+            </h2>
+    
+            <ul>
+            <li>
+                Posts
+                <span>22</span>
+            </li>
+            <li>
+                Followers
+                <span>999+</span>
+            </li>
+            <li>
+                Following
+                <span>10</span>
+            </li>
+            </ul>
+    
+            <button>Follow</button>
+        </div>
+        </div>
+    
+        <div class="circle">
+        <div class="img_box">
+            <img src="./user_log.jpg" alt="">
+        </div>
+        </div>
+    </div>
+  </div>
+
+
+
+  <!-- 打字效果 -->
+  <h1>Coding is <span></span></h1>
+
+  <script src="./index.js"></script>
+
+
+<!-- 这段 JavaScript 代码的目的是处理具有 blur_load 类的元素中的图像加载。它会检查每个图像是否已经加载，如果已经加载，则调用 loaded() 函数；如果尚未加载，则在图像加载完成后调用该函数。通过这种方式，可以在图像加载完成时执行特定的操作（如添加类以触发样式变化或动画） -->
+  <script>
+    const blurLoad = document.querySelectorAll('.blur_load');
+    blurLoad.forEach(blur => {
+      const img = blur.querySelector("img");
+
+      function loaded() {
+        console.log('loaded');
+        blur.classList.add('loaded')
+      }
+
+      if (img.complete) {
+        loaded()
+      } else {
+        img.addEventListener('load', loaded)
+      }
+    })
+
+  </script>
+ </body>
+</html>
